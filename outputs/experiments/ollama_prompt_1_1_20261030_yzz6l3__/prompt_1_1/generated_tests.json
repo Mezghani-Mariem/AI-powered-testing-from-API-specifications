@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "tests": [
+    {
+      "test_id": "TC_001",
+      "name": "Get existing product",
+      "method": "GET",
+      "endpoint": "/products/{id}",
+      "test_type": "positive",
+      "path_params": {
+        "id": 1
+      },
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "expected_body": {
+        "id": 1
+      }
+    },
+    {
+      "test_id": "TC_002",
+      "name": "Get nonexistent demo product",
+      "method": "GET",
+      "endpoint": "/products/{id}",
+      "test_type": "negative",
+      "path_params": {
+        "id": 999999
+      },
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 404,
+      "expected_body": null
+    },
+    {
+      "test_id": "TC_003",
+      "name": "Get product at maximum identifier",
+      "method": "GET",
+      "endpoint": "/products/{id}",
+      "test_type": "boundary",
+      "path_params": {
+        "id": 1000000
+      },
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "expected_body": {
+        "id": 1000000
+      }
+    },
+    {
+      "test_id": "TC_004",
+      "name": "Create valid product",
+      "method": "POST",
+      "endpoint": "/products",
+      "test_type": "positive",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "Test product",
+        "price": 10
+      },
+      "expected_status": 201,
+      "expected_body": null
+    },
+    {
+      "test_id": "TC_005",
+      "name": "Create product without required name",
+      "method": "POST",
+      "endpoint": "/products",
+      "test_type": "negative",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "price": 10
+      },
+      "expected_status": 422,
+      "expected_body": null
+    },
+    {
+      "test_id": "TC_006",
+      "name": "Reject price just below minimum",
+      "method": "POST",
+      "endpoint": "/products",
+      "test_type": "boundary",
+      "path_params": {},
+      "query_params": {},
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "Test product",
+        "price": -1
+      },
+      "expected_status": 422,
+      "expected_body": null
+    }
+  ]
+}

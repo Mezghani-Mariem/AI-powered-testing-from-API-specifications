@@ -1,0 +1,214 @@
+{
+  "audit_version": "1.0",
+  "valid": true,
+  "mode": "mock",
+  "model": "mock-hand-authored-products-v1",
+  "source_prompt_version": "1.1.0",
+  "sources": {
+    "spec": {
+      "path": "C:/Users/Lenovo/Desktop/Test/examples/sample_openapi.json",
+      "sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88"
+    },
+    "tests": {
+      "path": "C:/Users/Lenovo/Desktop/Test/outputs/consolidation/mock_replay/generated_tests.json",
+      "sha256": "7592576fc5af86716d24c974b22d0de99a184cc5655a1ad2c13fcfc588d01290"
+    },
+    "generation_report": {
+      "path": "C:/Users/Lenovo/Desktop/Test/outputs/consolidation/mock_replay/generation_report.json",
+      "sha256": "f918e416778d9410e1c4ccddc8fe4db3a0f6fe332ef259671ca0b2f82ccc40e8"
+    },
+    "hypotheses": {
+      "path": "C:/Users/Lenovo/Desktop/Test/outputs/consolidation/mock_replay/hypothetical_scenarios.json",
+      "sha256": "2edd8c15afef47dbbc0662fb475038a41202798f1bd2137ead2d8394cc30e09a"
+    }
+  },
+  "checks": [
+    {
+      "check": "all_exported_tests_semantically_accepted",
+      "passed": true
+    },
+    {
+      "check": "no_exported_behavior_duplicates",
+      "passed": true
+    },
+    {
+      "check": "unique_hypothesis_locations",
+      "passed": true
+    },
+    {
+      "check": "spec_hash_matches",
+      "passed": true
+    },
+    {
+      "check": "modes_match",
+      "passed": true
+    },
+    {
+      "check": "hypotheses_are_non_executable",
+      "passed": true
+    },
+    {
+      "check": "nonnegative_integer_counts",
+      "passed": true
+    },
+    {
+      "check": "analyzed_operations_match",
+      "passed": true
+    },
+    {
+      "check": "export_count_matches",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_count_matches",
+      "passed": true
+    },
+    {
+      "check": "categories_match",
+      "passed": true
+    },
+    {
+      "check": "covered_operations_match",
+      "passed": true
+    },
+    {
+      "check": "proposed_equals_structural_partition",
+      "passed": true
+    },
+    {
+      "check": "structural_equals_semantic_partition",
+      "passed": true
+    },
+    {
+      "check": "accepted_equals_exported_plus_duplicates",
+      "passed": true
+    },
+    {
+      "check": "rejected_partition_matches",
+      "passed": true
+    },
+    {
+      "check": "proposed_equals_exported_rejected_duplicates",
+      "passed": true
+    },
+    {
+      "check": "structural_validity_percent_matches",
+      "passed": true
+    },
+    {
+      "check": "semantic_acceptance_percent_matches",
+      "passed": true
+    },
+    {
+      "check": "operation_generation_coverage_percent_matches",
+      "passed": true
+    },
+    {
+      "check": "mock_has_no_llm_attempts",
+      "passed": true
+    },
+    {
+      "check": "live_has_no_mock_playbacks",
+      "passed": true
+    },
+    {
+      "check": "structural_rejection_records_match",
+      "passed": true
+    },
+    {
+      "check": "semantic_rejection_records_match",
+      "passed": true
+    },
+    {
+      "check": "failure_records_match",
+      "passed": true
+    },
+    {
+      "check": "status_matches_failures",
+      "passed": true
+    },
+    {
+      "check": "generation_time_is_finite_nonnegative",
+      "passed": true
+    },
+    {
+      "check": "tests_artifact_path",
+      "passed": true
+    },
+    {
+      "check": "tests_artifact_hash",
+      "passed": true
+    },
+    {
+      "check": "hypotheses_artifact_path",
+      "passed": true
+    },
+    {
+      "check": "hypotheses_artifact_hash",
+      "passed": true
+    }
+  ],
+  "warnings": [],
+  "exported_tests": [
+    {
+      "test_id": "TC_001",
+      "operation": "GET /products/{id}",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": []
+    },
+    {
+      "test_id": "TC_002",
+      "operation": "GET /products/{id}",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": []
+    },
+    {
+      "test_id": "TC_003",
+      "operation": "GET /products/{id}",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": []
+    },
+    {
+      "test_id": "TC_004",
+      "operation": "POST /products",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": []
+    },
+    {
+      "test_id": "TC_005",
+      "operation": "POST /products",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": [
+        "body: required at /"
+      ]
+    },
+    {
+      "test_id": "TC_006",
+      "operation": "POST /products",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": [
+        "body: minimum at /price"
+      ]
+    }
+  ],
+  "hypothetical_scenarios": [],
+  "scope": "Persisted artifact consistency and specification evidence only; no LLM call or target API execution, and no independent proof of a live provider call."
+}

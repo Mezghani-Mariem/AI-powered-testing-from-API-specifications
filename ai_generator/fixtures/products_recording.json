@@ -1,0 +1,337 @@
+{
+  "recording_version": "1.0",
+  "model": "mock-hand-authored-products-v1",
+  "provenance": "Hand-authored fixture playback; no LLM generated these responses",
+  "operations": {
+    "GET /products/{id}": {
+      "operation": {
+        "method": "GET",
+        "endpoint": "/products/{id}",
+        "description": "Retrieve a product using the documented seeded data",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000000
+            }
+          }
+        ],
+        "requestBody": null,
+        "responses": {
+          "200": {
+            "description": "Product exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "name",
+                    "price"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1000000
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "price": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 10000
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product does not exist; specifically id 999999 is absent in the demonstration fixture"
+          },
+          "422": {
+            "description": "Schema validation failure"
+          }
+        },
+        "x-test-scenarios": [
+          {
+            "name": "Get existing product",
+            "test_type": "positive",
+            "request": {
+              "path_params": {
+                "id": 1
+              }
+            },
+            "expected_status": 200,
+            "expected_body": {
+              "id": 1
+            }
+          },
+          {
+            "name": "Get nonexistent demo product",
+            "test_type": "negative",
+            "request": {
+              "path_params": {
+                "id": 999999
+              }
+            },
+            "expected_status": 404
+          },
+          {
+            "name": "Get product at maximum identifier",
+            "test_type": "boundary",
+            "request": {
+              "path_params": {
+                "id": 1000000
+              }
+            },
+            "expected_status": 200,
+            "expected_body": {
+              "id": 1000000
+            }
+          }
+        ],
+        "x-validation-error-status": 422,
+        "unsupported": []
+      },
+      "tests": [
+        {
+          "test_id": "recorded_1",
+          "name": "Get existing product",
+          "method": "GET",
+          "endpoint": "/products/{id}",
+          "test_type": "positive",
+          "path_params": {
+            "id": 1
+          },
+          "query_params": {},
+          "headers": {},
+          "body": null,
+          "expected_status": 200,
+          "expected_body": {
+            "id": 1
+          }
+        },
+        {
+          "test_id": "recorded_2",
+          "name": "Get nonexistent demo product",
+          "method": "GET",
+          "endpoint": "/products/{id}",
+          "test_type": "negative",
+          "path_params": {
+            "id": 999999
+          },
+          "query_params": {},
+          "headers": {},
+          "body": null,
+          "expected_status": 404,
+          "expected_body": null
+        },
+        {
+          "test_id": "recorded_3",
+          "name": "Get product at maximum identifier",
+          "method": "GET",
+          "endpoint": "/products/{id}",
+          "test_type": "boundary",
+          "path_params": {
+            "id": 1000000
+          },
+          "query_params": {},
+          "headers": {},
+          "body": null,
+          "expected_status": 200,
+          "expected_body": {
+            "id": 1000000
+          }
+        }
+      ]
+    },
+    "POST /products": {
+      "operation": {
+        "method": "POST",
+        "endpoint": "/products",
+        "description": "Create a product; independent requests, no returned ID dependencies",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "name",
+                  "price"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100
+                  },
+                  "price": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10000
+                  },
+                  "description": {
+                    "type": "string",
+                    "nullable": true,
+                    "maxLength": 500
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "name",
+                    "price"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1000000
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "price": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 10000
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Required fields, JSON types and constraints are validated; invalid input is rejected with 422"
+          }
+        },
+        "x-test-scenarios": [
+          {
+            "name": "Create valid product",
+            "test_type": "positive",
+            "request": {
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": {
+                "name": "Test product",
+                "price": 10
+              }
+            },
+            "expected_status": 201
+          },
+          {
+            "name": "Create product without required name",
+            "test_type": "negative",
+            "request": {
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": {
+                "price": 10
+              }
+            },
+            "expected_status": 422
+          },
+          {
+            "name": "Reject price just below minimum",
+            "test_type": "boundary",
+            "request": {
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": {
+                "name": "Test product",
+                "price": -1
+              }
+            },
+            "expected_status": 422
+          }
+        ],
+        "x-validation-error-status": 422,
+        "unsupported": []
+      },
+      "tests": [
+        {
+          "test_id": "recorded_1",
+          "name": "Create valid product",
+          "method": "POST",
+          "endpoint": "/products",
+          "test_type": "positive",
+          "path_params": {},
+          "query_params": {},
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "name": "Test product",
+            "price": 10
+          },
+          "expected_status": 201,
+          "expected_body": null
+        },
+        {
+          "test_id": "recorded_2",
+          "name": "Create product without required name",
+          "method": "POST",
+          "endpoint": "/products",
+          "test_type": "negative",
+          "path_params": {},
+          "query_params": {},
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "price": 10
+          },
+          "expected_status": 422,
+          "expected_body": null
+        },
+        {
+          "test_id": "recorded_3",
+          "name": "Reject price just below minimum",
+          "method": "POST",
+          "endpoint": "/products",
+          "test_type": "boundary",
+          "path_params": {},
+          "query_params": {},
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "name": "Test product",
+            "price": -1
+          },
+          "expected_status": 422,
+          "expected_body": null
+        }
+      ]
+    }
+  }
+}

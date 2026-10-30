@@ -1,0 +1,47 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+outputs/prompt_logs/
+outputs/repro_*/
+
+# Credentials and private material
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials*.json
+*service-account*.json
+secrets/
+.secrets/
+
+# Other Python environments, tool caches and local build artifacts
+venv/
+env/
+ENV/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Editor/OS temporary files (experiment logs and reports are intentionally retained)
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+

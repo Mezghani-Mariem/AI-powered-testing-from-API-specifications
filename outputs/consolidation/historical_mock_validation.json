@@ -1,0 +1,50 @@
+{
+  "contract_valid": true,
+  "semantic_checked": true,
+  "tests": 6,
+  "valid": true,
+  "details": [
+    {
+      "test_id": "TC_001",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ]
+    },
+    {
+      "test_id": "TC_002",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ]
+    },
+    {
+      "test_id": "TC_003",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ]
+    },
+    {
+      "test_id": "TC_004",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ]
+    },
+    {
+      "test_id": "TC_005",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ]
+    },
+    {
+      "test_id": "TC_006",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ]
+    }
+  ]
+}

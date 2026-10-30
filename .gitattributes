@@ -1,0 +1,7 @@
+# Preserve spec/report bytes: SHA-256 values in experimental audits depend on them.
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json -text
+*.jsonl -text
+outputs/** -text

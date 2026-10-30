@@ -1,0 +1,96 @@
+{
+  "mode": "mock",
+  "live_provider_called": false,
+  "python": "3.12.6",
+  "dependencies": {
+    "pydantic": "2.12.4",
+    "PyYAML": "6.0.2",
+    "httpx": "0.28.1",
+    "python-dotenv": "1.2.1",
+    "jsonschema": "4.26.0",
+    "pytest": "9.1.1"
+  },
+  "scope": "Test exports compared byte for byte; report timings/log timestamps are intentionally excluded",
+  "datasets": [
+    {
+      "fixture": "products_recording.json",
+      "runs": 2,
+      "byte_identical_tests": true,
+      "contract_valid": true,
+      "semantic_valid": true,
+      "tests_sha256": "7592576fc5af86716d24c974b22d0de99a184cc5655a1ad2c13fcfc588d01290",
+      "metrics": {
+        "operations_analyzed": 2,
+        "proposed_tests": 6,
+        "structurally_valid_tests": 6,
+        "structurally_rejected_tests": 0,
+        "semantically_accepted_tests_before_deduplication": 6,
+        "semantically_rejected_tests": 0,
+        "hypothetical_tests": 0,
+        "validated_tests": 6,
+        "rejected_tests": 0,
+        "duplicates": 0,
+        "structural_validity_percent": 100.0,
+        "semantic_acceptance_percent": 100.0,
+        "operations_covered": 2,
+        "operation_generation_coverage_percent": 100.0,
+        "category_distribution": {
+          "positive": 2,
+          "negative": 2,
+          "boundary": 2
+        },
+        "llm_attempts": 0,
+        "llm_failures": 0,
+        "mock_playbacks": 2,
+        "denominators": {
+          "structural_validity_percent": "all candidate items in successfully decoded v1.0 envelopes",
+          "semantic_acceptance_percent": "structurally valid candidate items, before deduplication",
+          "operation_generation_coverage_percent": "all parsed OpenAPI operations, including unsupported ones",
+          "category_distribution": "validated unique exported tests (counts, not percentages)"
+        },
+        "accounting": "proposed_tests = validated_tests + rejected_tests + duplicates; failed envelopes contribute no candidate items",
+        "coverage_scope": "generation coverage of declared operations; no API execution, behavior or code coverage"
+      }
+    },
+    {
+      "fixture": "products_recording_b.json",
+      "runs": 2,
+      "byte_identical_tests": true,
+      "contract_valid": true,
+      "semantic_valid": true,
+      "tests_sha256": "de6cadcfa9c7a765424d3daf5ba4b1de11d256f62777259f1fd7f7cfbf945996",
+      "metrics": {
+        "operations_analyzed": 2,
+        "proposed_tests": 6,
+        "structurally_valid_tests": 6,
+        "structurally_rejected_tests": 0,
+        "semantically_accepted_tests_before_deduplication": 6,
+        "semantically_rejected_tests": 0,
+        "hypothetical_tests": 0,
+        "validated_tests": 6,
+        "rejected_tests": 0,
+        "duplicates": 0,
+        "structural_validity_percent": 100.0,
+        "semantic_acceptance_percent": 100.0,
+        "operations_covered": 2,
+        "operation_generation_coverage_percent": 100.0,
+        "category_distribution": {
+          "positive": 2,
+          "negative": 2,
+          "boundary": 2
+        },
+        "llm_attempts": 0,
+        "llm_failures": 0,
+        "mock_playbacks": 2,
+        "denominators": {
+          "structural_validity_percent": "all candidate items in successfully decoded v1.0 envelopes",
+          "semantic_acceptance_percent": "structurally valid candidate items, before deduplication",
+          "operation_generation_coverage_percent": "all parsed OpenAPI operations, including unsupported ones",
+          "category_distribution": "validated unique exported tests (counts, not percentages)"
+        },
+        "accounting": "proposed_tests = validated_tests + rejected_tests + duplicates; failed envelopes contribute no candidate items",
+        "coverage_scope": "generation coverage of declared operations; no API execution, behavior or code coverage"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "report_version": "1.0",
+  "mode": "live",
+  "executable": false,
+  "scenarios": [
+    {
+      "operation": "GET /products/{id}",
+      "candidate_index": 0,
+      "outcome": "hypothetical",
+      "reasons": [
+        "Concrete response assertion values lack scenario evidence"
+      ],
+      "request_violations": [],
+      "candidate": {
+        "test_id": "1",
+        "name": "Get existing product",
+        "method": "GET",
+        "endpoint": "/products/{id}",
+        "test_type": "positive",
+        "path_params": {
+          "id": 1
+        },
+        "query_params": {},
+        "headers": {},
+        "body": null,
+        "expected_status": 200,
+        "expected_body": {
+          "id": 1,
+          "name": "Product 1",
+          "price": 9.99
+        }
+      }
+    },
+    {
+      "operation": "GET /products/{id}",
+      "candidate_index": 2,
+      "outcome": "hypothetical",
+      "reasons": [
+        "Concrete response assertion values lack scenario evidence"
+      ],
+      "request_violations": [],
+      "candidate": {
+        "test_id": "3",
+        "name": "Get product at maximum identifier",
+        "method": "GET",
+        "endpoint": "/products/{id}",
+        "test_type": "boundary",
+        "path_params": {
+          "id": 1000000
+        },
+        "query_params": {},
+        "headers": {},
+        "body": null,
+        "expected_status": 200,
+        "expected_body": {
+          "id": 1000000,
+          "name": "Product 1000000",
+          "price": 99.99
+        }
+      }
+    }
+  ]
+}

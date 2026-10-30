@@ -1,0 +1,120 @@
+{
+  "experiment_version": "1.0",
+  "started_at_utc": "2026-10-30T15:58:07.622726+00:00",
+  "timezone_for_reporting": "Africa/Lagos",
+  "mode": "live",
+  "new_live_runs": 1,
+  "source_spec": "examples/sample_openapi.json",
+  "spec_sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88",
+  "source_prompt_version": "1.1.0",
+  "base_url": "http://localhost:11434/v1",
+  "effective_llm_parameters": {
+    "model": "qwen2.5-coder:7b",
+    "temperature": 0.0,
+    "timeout": 180.0,
+    "max_retries": 2,
+    "response_format": "json_object",
+    "max_tokens": 4096
+  },
+  "historical_llm_parameters_recorded": false,
+  "parameter_comparability": "Current .env configuration was used unchanged, with no CLI override. The historical report and available logs do not record the old live settings; exact equality cannot be verified.",
+  "ollama_version": {
+    "version": "0.13.0"
+  },
+  "installed_model": {
+    "name": "qwen2.5-coder:7b",
+    "model": "qwen2.5-coder:7b",
+    "modified_at": "2026-07-09T12:38:55.7604116+01:00",
+    "size": 4683087561,
+    "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M"
+    }
+  },
+  "models_loaded_before_run": {
+    "models": []
+  },
+  "python": "3.12.6",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "historical_archive": {
+    "generated_tests.json": {
+      "source": "outputs/generated_tests_ollama.json",
+      "copy": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/generated_tests.json",
+      "sha256": "b3f0a50cd67c73c107d697be702d08efb1148a50495f90a79ff448354a0c1f05"
+    },
+    "generation_report.json": {
+      "source": "outputs/generation_report.json",
+      "copy": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/generation_report.json",
+      "sha256": "6595306046235e9904e64b1db597701ced8a87d5be19fc3bc6722dfd555245e2"
+    },
+    "hypothetical_scenarios.json": {
+      "source": "outputs/hypothetical_scenarios.json",
+      "copy": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/hypothetical_scenarios.json",
+      "sha256": "36935705a43665158caec896a34daf45d5393bde2e37b2cc712d7f29fb61a2b4"
+    },
+    "sample_openapi.json": {
+      "source": "examples/sample_openapi.json",
+      "copy": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/sample_openapi.json",
+      "sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88"
+    }
+  },
+  "preserved_files_before_run": {
+    "outputs/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outputs/generated_tests.json": "7592576fc5af86716d24c974b22d0de99a184cc5655a1ad2c13fcfc588d01290",
+    "outputs/generated_tests_ollama.json": "b3f0a50cd67c73c107d697be702d08efb1148a50495f90a79ff448354a0c1f05",
+    "outputs/generation_report.json": "6595306046235e9904e64b1db597701ced8a87d5be19fc3bc6722dfd555245e2",
+    "outputs/hypothetical_scenarios.json": "36935705a43665158caec896a34daf45d5393bde2e37b2cc712d7f29fb61a2b4",
+    "outputs/reproducibility_report.json": "ebd03d2c34c9442a1d44e25b8a3241c5457b79461d81fe2b028f8e137958245b",
+    "outputs/validation_report.json": "2ec79acbb547760715cba0b84b65c1ebdd76d7eceefbff1e6c48751e7ada95ed",
+    "outputs/consolidation/comparison.json": "3cf9ebcd212f2ce1ed0d72c93cc858fb9caa7bf59fe241ee1f1caf5509701398",
+    "outputs/consolidation/historical_mock_validation.json": "2ec79acbb547760715cba0b84b65c1ebdd76d7eceefbff1e6c48751e7ada95ed",
+    "outputs/consolidation/live_audit.json": "20f59bcb4d69fd37a0cfe21405bb5d2eea2d03c5fc0a156616a09c679d0f114d",
+    "outputs/consolidation/live_validation.json": "4ed7cb64a8bb94223d260011f2077341d7dbd3bd9b1cdb0357d380fa4e521ceb",
+    "outputs/consolidation/mock_audit.json": "f9d3884f0c0508e2bfede3bc72b55d30e1584fc6c8f6f3707a0f2685ddb01b8f",
+    "outputs/demo_set_b/generated_tests.json": "de6cadcfa9c7a765424d3daf5ba4b1de11d256f62777259f1fd7f7cfbf945996",
+    "outputs/demo_set_b/generation_report.json": "0ee889eea3fa77ea2b0398c3de4c01240d5871866ae5858057a407d335e41323",
+    "outputs/demo_set_b/hypothetical_scenarios.json": "2edd8c15afef47dbbc0662fb475038a41202798f1bd2137ead2d8394cc30e09a",
+    "outputs/prompt_logs/prompts.jsonl": "0a4bc0968a39fd0602fa791592986b14896dd01988475767e8b51990a719b31c",
+    "outputs/consolidation/mock_replay/generated_tests.json": "7592576fc5af86716d24c974b22d0de99a184cc5655a1ad2c13fcfc588d01290",
+    "outputs/consolidation/mock_replay/generation_report.json": "f918e416778d9410e1c4ccddc8fe4db3a0f6fe332ef259671ca0b2f82ccc40e8",
+    "outputs/consolidation/mock_replay/hypothetical_scenarios.json": "2edd8c15afef47dbbc0662fb475038a41202798f1bd2137ead2d8394cc30e09a",
+    "examples/sample_openapi.json": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88"
+  },
+  "scope": "One exploratory live run per prompt version, no target API execution; no general improvement claim.",
+  "generation_command": [
+    "C:\\Python312\\python.exe",
+    "-m",
+    "ai_generator.cli",
+    "generate",
+    "--spec",
+    "examples/sample_openapi.json",
+    "--output",
+    "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/prompt_1_1/generated_tests.json",
+    "--mode",
+    "live",
+    "--tests-per-operation",
+    "3",
+    "--env-file",
+    ".env",
+    "--log-prompts",
+    "--log-content",
+    "--log-path",
+    "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/prompt_1_1/prompts.jsonl"
+  ],
+  "generation_exit_code": 0,
+  "generation_finished_at_utc": "2026-10-30T15:58:42.376723+00:00",
+  "audit_exit_codes": {
+    "historical_prompt_1_0": 0,
+    "prompt_1_1": 0
+  },
+  "historical_sources_unchanged": true,
+  "changed_historical_files": [],
+  "finished_at_utc": "2026-10-30T15:58:45.234521+00:00"
+}

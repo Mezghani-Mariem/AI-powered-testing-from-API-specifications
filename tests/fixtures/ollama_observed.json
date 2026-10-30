@@ -1,0 +1,186 @@
+{
+  "provenance": "Persisted user-supplied live artifacts, prompt 1.0.0; exported IDs are normalized. This is not a raw LLM response or a new provider call.",
+  "tests": {
+    "schema_version": "1.0",
+    "tests": [
+      {
+        "test_id": "TC_001",
+        "name": "Get nonexistent demo product",
+        "method": "GET",
+        "endpoint": "/products/{id}",
+        "test_type": "negative",
+        "path_params": {
+          "id": 999999
+        },
+        "query_params": {},
+        "headers": {},
+        "body": null,
+        "expected_status": 404,
+        "expected_body": null
+      },
+      {
+        "test_id": "TC_002",
+        "name": "Create valid product",
+        "method": "POST",
+        "endpoint": "/products",
+        "test_type": "positive",
+        "path_params": {},
+        "query_params": {},
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "Test product",
+          "price": 10
+        },
+        "expected_status": 201,
+        "expected_body": null
+      },
+      {
+        "test_id": "TC_003",
+        "name": "Create product without required name",
+        "method": "POST",
+        "endpoint": "/products",
+        "test_type": "negative",
+        "path_params": {},
+        "query_params": {},
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "price": 10
+        },
+        "expected_status": 422,
+        "expected_body": null
+      },
+      {
+        "test_id": "TC_004",
+        "name": "Reject price just below minimum",
+        "method": "POST",
+        "endpoint": "/products",
+        "test_type": "boundary",
+        "path_params": {},
+        "query_params": {},
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "Test product",
+          "price": -1
+        },
+        "expected_status": 422,
+        "expected_body": null
+      }
+    ]
+  },
+  "report": {
+    "report_version": "1.0",
+    "mode": "live",
+    "model": "qwen2.5-coder:7b",
+    "prompt_version": "1.0.0",
+    "spec_sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88",
+    "status": "completed",
+    "tests_per_operation_target": 3,
+    "target_policy": "soft maximum requested in prompts; provider excess is still validated and counted",
+    "metrics": {
+      "operations_analyzed": 2,
+      "proposed_tests": 6,
+      "structurally_valid_tests": 6,
+      "structurally_rejected_tests": 0,
+      "semantically_accepted_tests_before_deduplication": 4,
+      "semantically_rejected_tests": 0,
+      "hypothetical_tests": 2,
+      "validated_tests": 4,
+      "rejected_tests": 2,
+      "duplicates": 0,
+      "structural_validity_percent": 100.0,
+      "semantic_acceptance_percent": 66.6667,
+      "operations_covered": 2,
+      "operation_generation_coverage_percent": 100.0,
+      "category_distribution": {
+        "positive": 1,
+        "negative": 2,
+        "boundary": 1
+      },
+      "generation_seconds": 26.728039,
+      "llm_attempts": 2,
+      "llm_failures": 0,
+      "mock_playbacks": 0,
+      "denominators": {
+        "structural_validity_percent": "all candidate items in successfully decoded v1.0 envelopes",
+        "semantic_acceptance_percent": "structurally valid candidate items, before deduplication",
+        "operation_generation_coverage_percent": "all parsed OpenAPI operations, including unsupported ones",
+        "category_distribution": "validated unique exported tests (counts, not percentages)"
+      },
+      "accounting": "proposed_tests = validated_tests + rejected_tests + duplicates; failed envelopes contribute no candidate items",
+      "coverage_scope": "generation coverage of declared operations; no API execution, behavior or code coverage"
+    },
+    "parser_warnings": [],
+    "rejections": [],
+    "operation_failures": [],
+    "assurance": "specification evidence only; API availability, state and actual behavior were not verified"
+  },
+  "hypotheses": {
+    "report_version": "1.0",
+    "mode": "live",
+    "executable": false,
+    "scenarios": [
+      {
+        "operation": "GET /products/{id}",
+        "candidate_index": 0,
+        "outcome": "hypothetical",
+        "reasons": [
+          "Concrete response assertion values lack scenario evidence"
+        ],
+        "request_violations": [],
+        "candidate": {
+          "test_id": "1",
+          "name": "Get existing product",
+          "method": "GET",
+          "endpoint": "/products/{id}",
+          "test_type": "positive",
+          "path_params": {
+            "id": 1
+          },
+          "query_params": {},
+          "headers": {},
+          "body": null,
+          "expected_status": 200,
+          "expected_body": {
+            "id": 1,
+            "name": "Product 1",
+            "price": 9.99
+          }
+        }
+      },
+      {
+        "operation": "GET /products/{id}",
+        "candidate_index": 2,
+        "outcome": "hypothetical",
+        "reasons": [
+          "Concrete response assertion values lack scenario evidence"
+        ],
+        "request_violations": [],
+        "candidate": {
+          "test_id": "3",
+          "name": "Get product at maximum identifier",
+          "method": "GET",
+          "endpoint": "/products/{id}",
+          "test_type": "boundary",
+          "path_params": {
+            "id": 1000000
+          },
+          "query_params": {},
+          "headers": {},
+          "body": null,
+          "expected_status": 200,
+          "expected_body": {
+            "id": 1000000,
+            "name": "Product 1000000",
+            "price": 99.99
+          }
+        }
+      }
+    ]
+  }
+}

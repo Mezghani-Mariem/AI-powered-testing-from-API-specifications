@@ -1,0 +1,8 @@
+{
+  "mode": "live",
+  "status": "completed",
+  "tests": 6,
+  "output": "outputs\\experiments\\ollama_prompt_1_1_20261030_yzz6l3__\\prompt_1_1\\generated_tests.json",
+  "report": "outputs\\experiments\\ollama_prompt_1_1_20261030_yzz6l3__\\prompt_1_1\\generation_report.json",
+  "hypotheses": "outputs\\experiments\\ollama_prompt_1_1_20261030_yzz6l3__\\prompt_1_1\\hypothetical_scenarios.json"
+}

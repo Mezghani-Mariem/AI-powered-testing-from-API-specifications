@@ -1,0 +1,47 @@
+{
+  "report_version": "1.0",
+  "mode": "mock",
+  "model": "mock-hand-authored-products-v1-b",
+  "prompt_version": "1.0.0",
+  "spec_sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88",
+  "status": "completed",
+  "tests_per_operation_target": 3,
+  "target_policy": "soft maximum requested in prompts; provider excess is still validated and counted",
+  "metrics": {
+    "operations_analyzed": 2,
+    "proposed_tests": 6,
+    "structurally_valid_tests": 6,
+    "structurally_rejected_tests": 0,
+    "semantically_accepted_tests_before_deduplication": 6,
+    "semantically_rejected_tests": 0,
+    "hypothetical_tests": 0,
+    "validated_tests": 6,
+    "rejected_tests": 0,
+    "duplicates": 0,
+    "structural_validity_percent": 100.0,
+    "semantic_acceptance_percent": 100.0,
+    "operations_covered": 2,
+    "operation_generation_coverage_percent": 100.0,
+    "category_distribution": {
+      "positive": 2,
+      "negative": 2,
+      "boundary": 2
+    },
+    "generation_seconds": 0.007942,
+    "llm_attempts": 0,
+    "llm_failures": 0,
+    "mock_playbacks": 2,
+    "denominators": {
+      "structural_validity_percent": "all candidate items in successfully decoded v1.0 envelopes",
+      "semantic_acceptance_percent": "structurally valid candidate items, before deduplication",
+      "operation_generation_coverage_percent": "all parsed OpenAPI operations, including unsupported ones",
+      "category_distribution": "validated unique exported tests (counts, not percentages)"
+    },
+    "accounting": "proposed_tests = validated_tests + rejected_tests + duplicates; failed envelopes contribute no candidate items",
+    "coverage_scope": "generation coverage of declared operations; no API execution, behavior or code coverage"
+  },
+  "parser_warnings": [],
+  "rejections": [],
+  "operation_failures": [],
+  "assurance": "specification evidence only; API availability, state and actual behavior were not verified"
+}

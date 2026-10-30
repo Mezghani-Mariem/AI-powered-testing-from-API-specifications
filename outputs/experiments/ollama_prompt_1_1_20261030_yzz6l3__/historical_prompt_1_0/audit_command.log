@@ -1,0 +1,243 @@
+{
+  "audit_version": "1.0",
+  "valid": true,
+  "mode": "live",
+  "model": "qwen2.5-coder:7b",
+  "source_prompt_version": "1.0.0",
+  "sources": {
+    "spec": {
+      "path": "examples/sample_openapi.json",
+      "sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88"
+    },
+    "tests": {
+      "path": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/generated_tests.json",
+      "sha256": "b3f0a50cd67c73c107d697be702d08efb1148a50495f90a79ff448354a0c1f05"
+    },
+    "generation_report": {
+      "path": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/generation_report.json",
+      "sha256": "6595306046235e9904e64b1db597701ced8a87d5be19fc3bc6722dfd555245e2"
+    },
+    "hypotheses": {
+      "path": "outputs/experiments/ollama_prompt_1_1_20261030_yzz6l3__/historical_prompt_1_0/hypothetical_scenarios.json",
+      "sha256": "36935705a43665158caec896a34daf45d5393bde2e37b2cc712d7f29fb61a2b4"
+    }
+  },
+  "checks": [
+    {
+      "check": "all_exported_tests_semantically_accepted",
+      "passed": true
+    },
+    {
+      "check": "no_exported_behavior_duplicates",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_location_is_valid",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_stays_hypothetical",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_reasons_match",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_violations_match",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_not_in_export",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_location_is_valid",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_stays_hypothetical",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_reasons_match",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_violations_match",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_not_in_export",
+      "passed": true
+    },
+    {
+      "check": "unique_hypothesis_locations",
+      "passed": true
+    },
+    {
+      "check": "spec_hash_matches",
+      "passed": true
+    },
+    {
+      "check": "modes_match",
+      "passed": true
+    },
+    {
+      "check": "hypotheses_are_non_executable",
+      "passed": true
+    },
+    {
+      "check": "nonnegative_integer_counts",
+      "passed": true
+    },
+    {
+      "check": "analyzed_operations_match",
+      "passed": true
+    },
+    {
+      "check": "export_count_matches",
+      "passed": true
+    },
+    {
+      "check": "hypothesis_count_matches",
+      "passed": true
+    },
+    {
+      "check": "categories_match",
+      "passed": true
+    },
+    {
+      "check": "covered_operations_match",
+      "passed": true
+    },
+    {
+      "check": "proposed_equals_structural_partition",
+      "passed": true
+    },
+    {
+      "check": "structural_equals_semantic_partition",
+      "passed": true
+    },
+    {
+      "check": "accepted_equals_exported_plus_duplicates",
+      "passed": true
+    },
+    {
+      "check": "rejected_partition_matches",
+      "passed": true
+    },
+    {
+      "check": "proposed_equals_exported_rejected_duplicates",
+      "passed": true
+    },
+    {
+      "check": "structural_validity_percent_matches",
+      "passed": true
+    },
+    {
+      "check": "semantic_acceptance_percent_matches",
+      "passed": true
+    },
+    {
+      "check": "operation_generation_coverage_percent_matches",
+      "passed": true
+    },
+    {
+      "check": "mock_has_no_llm_attempts",
+      "passed": true
+    },
+    {
+      "check": "live_has_no_mock_playbacks",
+      "passed": true
+    },
+    {
+      "check": "structural_rejection_records_match",
+      "passed": true
+    },
+    {
+      "check": "semantic_rejection_records_match",
+      "passed": true
+    },
+    {
+      "check": "failure_records_match",
+      "passed": true
+    },
+    {
+      "check": "status_matches_failures",
+      "passed": true
+    },
+    {
+      "check": "generation_time_is_finite_nonnegative",
+      "passed": true
+    }
+  ],
+  "warnings": [
+    "Legacy report has no output file hashes; the association relies on explicit input paths and consistency checks, not a historical cryptographic binding."
+  ],
+  "exported_tests": [
+    {
+      "test_id": "TC_001",
+      "operation": "GET /products/{id}",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": []
+    },
+    {
+      "test_id": "TC_002",
+      "operation": "POST /products",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": []
+    },
+    {
+      "test_id": "TC_003",
+      "operation": "POST /products",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": [
+        "body: required at /"
+      ]
+    },
+    {
+      "test_id": "TC_004",
+      "operation": "POST /products",
+      "outcome": "accepted",
+      "reasons": [
+        "Exact documented scenario"
+      ],
+      "request_violations": [
+        "body: minimum at /price"
+      ]
+    }
+  ],
+  "hypothetical_scenarios": [
+    {
+      "operation": "GET /products/{id}",
+      "candidate_index": 0,
+      "source_test_id": "1",
+      "outcome": "hypothetical",
+      "reasons": [
+        "Concrete response assertion values lack scenario evidence"
+      ],
+      "request_violations": []
+    },
+    {
+      "operation": "GET /products/{id}",
+      "candidate_index": 2,
+      "source_test_id": "3",
+      "outcome": "hypothetical",
+      "reasons": [
+        "Concrete response assertion values lack scenario evidence"
+      ],
+      "request_violations": []
+    }
+  ],
+  "scope": "Persisted artifact consistency and specification evidence only; no LLM call or target API execution, and no independent proof of a live provider call."
+}

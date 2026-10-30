@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "S5 Products - documented demonstration fixtures",
+    "version": "1.0.0",
+    "description": "Specification only. No API is implemented. Demo preconditions: seed product 1 (Notebook, price 10) and product 1000000 (Upper bound product, price 20); product 999999 must be absent. A future demo API must implement these fixtures and return 422 for JSON schema violations."
+  },
+  "paths": {
+    "/products/{id}": {
+      "parameters": [{"$ref": "#/components/parameters/ProductId"}],
+      "get": {
+        "summary": "Retrieve a product using the documented seeded data",
+        "responses": {
+          "200": {"description": "Product exists", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Product"}}}},
+          "404": {"description": "Product does not exist; specifically id 999999 is absent in the demonstration fixture"},
+          "422": {"description": "Schema validation failure"}
+        },
+        "x-validation-error-status": 422,
+        "x-test-scenarios": [
+          {"name": "Get existing product", "test_type": "positive", "request": {"path_params": {"id": 1}}, "expected_status": 200, "expected_body": {"id": 1}},
+          {"name": "Get nonexistent demo product", "test_type": "negative", "request": {"path_params": {"id": 999999}}, "expected_status": 404},
+          {"name": "Get product at maximum identifier", "test_type": "boundary", "request": {"path_params": {"id": 1000000}}, "expected_status": 200, "expected_body": {"id": 1000000}}
+        ]
+      }
+    },
+    "/products": {
+      "post": {
+        "summary": "Create a product; independent requests, no returned ID dependencies",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ProductInput"}}}},
+        "responses": {
+          "201": {"description": "Product created", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Product"}}}},
+          "422": {"description": "Required fields, JSON types and constraints are validated; invalid input is rejected with 422"}
+        },
+        "x-validation-error-status": 422,
+        "x-test-scenarios": [
+          {"name": "Create valid product", "test_type": "positive", "request": {"headers": {"Content-Type": "application/json"}, "body": {"name": "Test product", "price": 10}}, "expected_status": 201},
+          {"name": "Create product without required name", "test_type": "negative", "request": {"headers": {"Content-Type": "application/json"}, "body": {"price": 10}}, "expected_status": 422},
+          {"name": "Reject price just below minimum", "test_type": "boundary", "request": {"headers": {"Content-Type": "application/json"}, "body": {"name": "Test product", "price": -1}}, "expected_status": 422}
+        ]
+      }
+    }
+  },
+  "components": {
+    "parameters": {"ProductId": {"name": "id", "in": "path", "required": true, "schema": {"type": "integer", "minimum": 1, "maximum": 1000000}}},
+    "schemas": {
+      "ProductInput": {
+        "type": "object", "additionalProperties": false, "required": ["name", "price"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1, "maxLength": 100},
+          "price": {"type": "number", "minimum": 0, "maximum": 10000},
+          "description": {"type": "string", "nullable": true, "maxLength": 500}
+        }
+      },
+      "Product": {
+        "type": "object", "additionalProperties": false, "required": ["id", "name", "price"],
+        "properties": {
+          "id": {"type": "integer", "minimum": 1, "maximum": 1000000},
+          "name": {"type": "string", "minLength": 1, "maxLength": 100},
+          "price": {"type": "number", "minimum": 0, "maximum": 10000}
+        }
+      }
+    }
+  }
+}

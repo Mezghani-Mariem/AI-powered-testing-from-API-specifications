@@ -1,0 +1,121 @@
+{
+  "comparison_version": "1.0",
+  "target_api_executed": false,
+  "new_llm_call_performed": false,
+  "original_files_unchanged": true,
+  "sources": {
+    "examples/sample_openapi.json": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88",
+    "outputs/generated_tests.json": "7592576fc5af86716d24c974b22d0de99a184cc5655a1ad2c13fcfc588d01290",
+    "outputs/generated_tests_ollama.json": "b3f0a50cd67c73c107d697be702d08efb1148a50495f90a79ff448354a0c1f05",
+    "outputs/generation_report.json": "6595306046235e9904e64b1db597701ced8a87d5be19fc3bc6722dfd555245e2",
+    "outputs/hypothetical_scenarios.json": "36935705a43665158caec896a34daf45d5393bde2e37b2cc712d7f29fb61a2b4",
+    "outputs/reproducibility_report.json": "ebd03d2c34c9442a1d44e25b8a3241c5457b79461d81fe2b028f8e137958245b",
+    "outputs/validation_report.json": "2ec79acbb547760715cba0b84b65c1ebdd76d7eceefbff1e6c48751e7ada95ed",
+    "outputs/demo_set_b/generated_tests.json": "de6cadcfa9c7a765424d3daf5ba4b1de11d256f62777259f1fd7f7cfbf945996",
+    "outputs/demo_set_b/generation_report.json": "0ee889eea3fa77ea2b0398c3de4c01240d5871866ae5858057a407d335e41323",
+    "outputs/demo_set_b/hypothetical_scenarios.json": "2edd8c15afef47dbbc0662fb475038a41202798f1bd2137ead2d8394cc30e09a"
+  },
+  "mock": {
+    "tests_file": "outputs/generated_tests.json",
+    "source_prompt_version": "1.0.0",
+    "metrics": {
+      "operations_analyzed": 2,
+      "proposed_tests": 6,
+      "structurally_valid_tests": 6,
+      "structurally_rejected_tests": 0,
+      "semantically_accepted_tests_before_deduplication": 6,
+      "semantically_rejected_tests": 0,
+      "hypothetical_tests": 0,
+      "validated_tests": 6,
+      "rejected_tests": 0,
+      "duplicates": 0,
+      "structural_validity_percent": 100.0,
+      "semantic_acceptance_percent": 100.0,
+      "operations_covered": 2,
+      "operation_generation_coverage_percent": 100.0,
+      "category_distribution": {
+        "positive": 2,
+        "negative": 2,
+        "boundary": 2
+      },
+      "llm_attempts": 0,
+      "llm_failures": 0,
+      "mock_playbacks": 2,
+      "denominators": {
+        "structural_validity_percent": "all candidate items in successfully decoded v1.0 envelopes",
+        "semantic_acceptance_percent": "structurally valid candidate items, before deduplication",
+        "operation_generation_coverage_percent": "all parsed OpenAPI operations, including unsupported ones",
+        "category_distribution": "validated unique exported tests (counts, not percentages)"
+      },
+      "accounting": "proposed_tests = validated_tests + rejected_tests + duplicates; failed envelopes contribute no candidate items",
+      "coverage_scope": "generation coverage of declared operations; no API execution, behavior or code coverage"
+    },
+    "original_generation_seconds": null,
+    "timing_note": "Original matching generation report was replaced by the live run; historical reproducibility metrics exclude time. New replay time is not a model latency comparison.",
+    "replay_byte_identical": true,
+    "replay_prompt_version": "1.1.0",
+    "experimental_value": "Hand-authored deterministic fixtures: pipeline regression, not a model generation experiment."
+  },
+  "live": {
+    "tests_file": "outputs/generated_tests_ollama.json",
+    "model": "qwen2.5-coder:7b",
+    "source_prompt_version": "1.0.0",
+    "metrics": {
+      "operations_analyzed": 2,
+      "proposed_tests": 6,
+      "structurally_valid_tests": 6,
+      "structurally_rejected_tests": 0,
+      "semantically_accepted_tests_before_deduplication": 4,
+      "semantically_rejected_tests": 0,
+      "hypothetical_tests": 2,
+      "validated_tests": 4,
+      "rejected_tests": 2,
+      "duplicates": 0,
+      "structural_validity_percent": 100.0,
+      "semantic_acceptance_percent": 66.6667,
+      "operations_covered": 2,
+      "operation_generation_coverage_percent": 100.0,
+      "category_distribution": {
+        "positive": 1,
+        "negative": 2,
+        "boundary": 1
+      },
+      "generation_seconds": 26.728039,
+      "llm_attempts": 2,
+      "llm_failures": 0,
+      "mock_playbacks": 0,
+      "denominators": {
+        "structural_validity_percent": "all candidate items in successfully decoded v1.0 envelopes",
+        "semantic_acceptance_percent": "structurally valid candidate items, before deduplication",
+        "operation_generation_coverage_percent": "all parsed OpenAPI operations, including unsupported ones",
+        "category_distribution": "validated unique exported tests (counts, not percentages)"
+      },
+      "accounting": "proposed_tests = validated_tests + rejected_tests + duplicates; failed envelopes contribute no candidate items",
+      "coverage_scope": "generation coverage of declared operations; no API execution, behavior or code coverage"
+    },
+    "experimental_value": "One user-reported Ollama model run supported by persisted output artifacts; audited offline, without independent runtime verification or API execution."
+  },
+  "identical_exported_behaviors": 4,
+  "not_exported_live": [
+    {
+      "mock_test_id": "TC_001",
+      "operation": "GET /products/{id}",
+      "test_type": "positive"
+    },
+    {
+      "mock_test_id": "TC_003",
+      "operation": "GET /products/{id}",
+      "test_type": "boundary"
+    }
+  ],
+  "prompt_improvement": {
+    "new_version": "1.1.0",
+    "new_live_experiment_performed": false,
+    "effect_on_model_acceptance": "unmeasured; historical 4/6 result is unchanged"
+  },
+  "limits": [
+    "Single run on two operations is not a general benchmark.",
+    "100% operation coverage does not imply a positive test for each operation or behavior coverage.",
+    "Legacy source reports lack historical output hashes; explicit file association was checked semantically and arithmetically."
+  ]
+}

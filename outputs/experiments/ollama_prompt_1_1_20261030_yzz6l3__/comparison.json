@@ -1,0 +1,157 @@
+{
+  "comparison_version": "1.0",
+  "observed_live_runs_per_version": 1,
+  "spec_sha256": "2631c00425836bdd7b6c97ea81ef91f9181ac22fa24dafb041e41e7cb7372c88",
+  "same_spec_verified": true,
+  "same_model_name_verified": true,
+  "historical_llm_settings_equality_verified": false,
+  "current_llm_settings_verified_in_logs": true,
+  "effective_llm_parameters": {
+    "model": "qwen2.5-coder:7b",
+    "temperature": 0.0,
+    "timeout": 180.0,
+    "max_retries": 2,
+    "response_format": "json_object",
+    "max_tokens": 4096
+  },
+  "metrics": {
+    "proposed_tests": {
+      "1.0.0": 6,
+      "1.1.0": 6,
+      "delta_1_1_minus_1_0": 0
+    },
+    "validated_tests": {
+      "1.0.0": 4,
+      "1.1.0": 6,
+      "delta_1_1_minus_1_0": 2
+    },
+    "hypothetical_tests": {
+      "1.0.0": 2,
+      "1.1.0": 0,
+      "delta_1_1_minus_1_0": -2
+    },
+    "structural_validity_percent": {
+      "1.0.0": 100.0,
+      "1.1.0": 100.0,
+      "delta_1_1_minus_1_0": 0.0
+    },
+    "semantic_acceptance_percent": {
+      "1.0.0": 66.6667,
+      "1.1.0": 100.0,
+      "delta_1_1_minus_1_0": 33.3333
+    },
+    "operation_generation_coverage_percent": {
+      "1.0.0": 100.0,
+      "1.1.0": 100.0,
+      "delta_1_1_minus_1_0": 0.0
+    },
+    "operations_covered": {
+      "1.0.0": 2,
+      "1.1.0": 2,
+      "delta_1_1_minus_1_0": 0
+    },
+    "operations_analyzed": {
+      "1.0.0": 2,
+      "1.1.0": 2,
+      "delta_1_1_minus_1_0": 0
+    },
+    "generation_seconds": {
+      "1.0.0": 26.728039,
+      "1.1.0": 32.974391,
+      "delta_1_1_minus_1_0": 6.246352
+    },
+    "duplicates": {
+      "1.0.0": 0,
+      "1.1.0": 0,
+      "delta_1_1_minus_1_0": 0
+    },
+    "llm_attempts": {
+      "1.0.0": 2,
+      "1.1.0": 2,
+      "delta_1_1_minus_1_0": 0
+    }
+  },
+  "category_distribution": {
+    "1.0.0": {
+      "positive": 1,
+      "negative": 2,
+      "boundary": 1
+    },
+    "1.1.0": {
+      "positive": 2,
+      "negative": 2,
+      "boundary": 2
+    }
+  },
+  "get_positive_exported": {
+    "1.0.0": 0,
+    "1.1.0": 1
+  },
+  "new_get_positive_cases": [
+    {
+      "test_id": "TC_001",
+      "name": "Get existing product",
+      "method": "GET",
+      "endpoint": "/products/{id}",
+      "test_type": "positive",
+      "path_params": {
+        "id": 1
+      },
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "expected_body": {
+        "id": 1
+      }
+    }
+  ],
+  "new_raw_get_positive_cases": [
+    {
+      "test_id": "1",
+      "name": "Get existing product",
+      "method": "GET",
+      "endpoint": "/products/{id}",
+      "test_type": "positive",
+      "path_params": {
+        "id": 1
+      },
+      "query_params": {},
+      "headers": {},
+      "body": null,
+      "expected_status": 200,
+      "expected_body": {
+        "id": 1
+      }
+    }
+  ],
+  "audits_valid": {
+    "1.0.0": true,
+    "1.1.0": true
+  },
+  "all_historical_outputs_unchanged": true,
+  "historical_copies_byte_identical": true,
+  "new_calls_logged": [
+    {
+      "operation": "GET /products/{id}",
+      "attempts": 1,
+      "duration_seconds": 19.180450600004406,
+      "mode": "live"
+    },
+    {
+      "operation": "POST /products",
+      "attempts": 1,
+      "duration_seconds": 13.777744399994845,
+      "mode": "live"
+    }
+  ],
+  "pytest_results": {
+    "tests": 145,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "interpretation": "More tests accepted and documented GET assertions retained in this observation; generation was slower. One run per version, unrecorded old LLM settings and unknown old load state prevent general or isolated causal claims.",
+  "new_model_initially_loaded": false,
+  "target_api_executed": false
+}
