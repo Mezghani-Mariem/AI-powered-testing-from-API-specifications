@@ -1,0 +1,127 @@
+{
+  "$defs": {
+    "JsonValue": {},
+    "TestCase": {
+      "additionalProperties": false,
+      "properties": {
+        "test_id": {
+          "minLength": 1,
+          "title": "Test Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE",
+            "HEAD",
+            "OPTIONS",
+            "TRACE"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "endpoint": {
+          "title": "Endpoint",
+          "type": "string"
+        },
+        "test_type": {
+          "enum": [
+            "positive",
+            "negative",
+            "boundary"
+          ],
+          "title": "Test Type",
+          "type": "string"
+        },
+        "path_params": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Path Params",
+          "type": "object"
+        },
+        "query_params": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Query Params",
+          "type": "object"
+        },
+        "headers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Headers",
+          "type": "object"
+        },
+        "body": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "expected_status": {
+          "maximum": 599,
+          "minimum": 100,
+          "title": "Expected Status",
+          "type": "integer"
+        },
+        "expected_body": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "$ref": "#/$defs/JsonValue"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Expected Body"
+        }
+      },
+      "required": [
+        "test_id",
+        "name",
+        "method",
+        "endpoint",
+        "test_type",
+        "path_params",
+        "query_params",
+        "headers",
+        "body",
+        "expected_status",
+        "expected_body"
+      ],
+      "title": "TestCase",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "tests": {
+      "items": {
+        "$ref": "#/$defs/TestCase"
+      },
+      "title": "Tests",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "tests"
+  ],
+  "title": "TestSuite",
+  "type": "object"
+}
