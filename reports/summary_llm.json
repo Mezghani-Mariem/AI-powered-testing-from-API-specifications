@@ -1,0 +1,19 @@
+{
+  "total_tests": 6,
+  "passed_tests": 5,
+  "success_rate_percent": 83.33,
+  "validity_rate_percent": 100.0,
+  "categories_distribution": {
+    "positive": 2,
+    "negative": 2,
+    "boundary": 2
+  },
+  "execution_time": {
+    "total_ms": 2239.33,
+    "average_ms": 373.22
+  },
+  "operations_coverage": {
+    "total_operations_in_spec": 5,
+    "note": "Couverture détaillée à calculer si le runner exporte les endpoints."
+  }
+}

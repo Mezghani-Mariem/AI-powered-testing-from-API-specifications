@@ -1,0 +1,68 @@
+[
+  {
+    "test_id": "TC_001",
+    "name": "Get existing product",
+    "test_type": "positive",
+    "status_expected": 200,
+    "status_observed": 200,
+    "passed": true,
+    "duration_ms": 2207.32,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_002",
+    "name": "Get nonexistent demo product",
+    "test_type": "negative",
+    "status_expected": 404,
+    "status_observed": 404,
+    "passed": true,
+    "duration_ms": 11.24,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_003",
+    "name": "Get product at maximum identifier",
+    "test_type": "boundary",
+    "status_expected": 200,
+    "status_observed": 404,
+    "passed": false,
+    "duration_ms": 5.02,
+    "failure_reason": "Attendu 200, obtenu 404",
+    "error_type": "executable_failure"
+  },
+  {
+    "test_id": "TC_004",
+    "name": "Create valid product",
+    "test_type": "positive",
+    "status_expected": 201,
+    "status_observed": 201,
+    "passed": true,
+    "duration_ms": 7.7,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_005",
+    "name": "Create product without required name",
+    "test_type": "negative",
+    "status_expected": 422,
+    "status_observed": 422,
+    "passed": true,
+    "duration_ms": 4.55,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_006",
+    "name": "Reject price just below minimum",
+    "test_type": "boundary",
+    "status_expected": 422,
+    "status_observed": 422,
+    "passed": true,
+    "duration_ms": 3.5,
+    "failure_reason": "",
+    "error_type": null
+  }
+]
