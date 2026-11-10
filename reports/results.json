@@ -1,0 +1,90 @@
+[
+  {
+    "test_id": "TC_001",
+    "name": "Créer un item valide",
+    "test_type": "positive",
+    "status_expected": 201,
+    "status_observed": 201,
+    "passed": true,
+    "duration_ms": 2114.52,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_002",
+    "name": "Lister les items",
+    "test_type": "positive",
+    "status_expected": 200,
+    "status_observed": 200,
+    "passed": true,
+    "duration_ms": 4.92,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_003",
+    "name": "Récupérer un item existant",
+    "test_type": "positive",
+    "status_expected": 200,
+    "status_observed": 200,
+    "passed": true,
+    "duration_ms": 4.45,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_004",
+    "name": "Item inexistant",
+    "test_type": "negative",
+    "status_expected": 404,
+    "status_observed": 404,
+    "passed": true,
+    "duration_ms": 3.55,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_005",
+    "name": "Prix négatif refusé",
+    "test_type": "negative",
+    "status_expected": 422,
+    "status_observed": 422,
+    "passed": true,
+    "duration_ms": 6.97,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_006",
+    "name": "Nom vide refusé",
+    "test_type": "negative",
+    "status_expected": 422,
+    "status_observed": 422,
+    "passed": true,
+    "duration_ms": 4.19,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_007",
+    "name": "Prix zéro (limite basse)",
+    "test_type": "boundary",
+    "status_expected": 422,
+    "status_observed": 422,
+    "passed": true,
+    "duration_ms": 2.98,
+    "failure_reason": "",
+    "error_type": null
+  },
+  {
+    "test_id": "TC_008",
+    "name": "Prix très petit positif (limite acceptée)",
+    "test_type": "boundary",
+    "status_expected": 201,
+    "status_observed": 201,
+    "passed": true,
+    "duration_ms": 4.25,
+    "failure_reason": "",
+    "error_type": null
+  }
+]
