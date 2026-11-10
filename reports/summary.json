@@ -9,8 +9,8 @@
     "boundary": 2
   },
   "execution_time": {
-    "total_ms": 2145.83,
-    "average_ms": 268.23
+    "total_ms": 2108.66,
+    "average_ms": 263.58
   },
   "operations_coverage": {
     "total_operations_in_spec": 5,

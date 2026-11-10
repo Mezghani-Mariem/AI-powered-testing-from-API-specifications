@@ -6,7 +6,7 @@
     "status_expected": 201,
     "status_observed": 201,
     "passed": true,
-    "duration_ms": 2114.52,
+    "duration_ms": 2081.14,
     "failure_reason": "",
     "error_type": null
   },
@@ -17,7 +17,7 @@
     "status_expected": 200,
     "status_observed": 200,
     "passed": true,
-    "duration_ms": 4.92,
+    "duration_ms": 5.65,
     "failure_reason": "",
     "error_type": null
   },
@@ -28,7 +28,7 @@
     "status_expected": 200,
     "status_observed": 200,
     "passed": true,
-    "duration_ms": 4.45,
+    "duration_ms": 4.69,
     "failure_reason": "",
     "error_type": null
   },
@@ -39,7 +39,7 @@
     "status_expected": 404,
     "status_observed": 404,
     "passed": true,
-    "duration_ms": 3.55,
+    "duration_ms": 3.29,
     "failure_reason": "",
     "error_type": null
   },
@@ -50,7 +50,7 @@
     "status_expected": 422,
     "status_observed": 422,
     "passed": true,
-    "duration_ms": 6.97,
+    "duration_ms": 3.18,
     "failure_reason": "",
     "error_type": null
   },
@@ -61,7 +61,7 @@
     "status_expected": 422,
     "status_observed": 422,
     "passed": true,
-    "duration_ms": 4.19,
+    "duration_ms": 3.66,
     "failure_reason": "",
     "error_type": null
   },
@@ -72,7 +72,7 @@
     "status_expected": 422,
     "status_observed": 422,
     "passed": true,
-    "duration_ms": 2.98,
+    "duration_ms": 3.03,
     "failure_reason": "",
     "error_type": null
   },
@@ -83,7 +83,7 @@
     "status_expected": 201,
     "status_observed": 201,
     "passed": true,
-    "duration_ms": 4.25,
+    "duration_ms": 4.02,
     "failure_reason": "",
     "error_type": null
   }
